@@ -8,7 +8,6 @@ body {
   font-size: 16px;
   color: #071622;
   margin: 0;
-  padding-bottom: 150px;
 }
 @media (min-width: 600px) {
   /* body {
@@ -53,13 +52,22 @@ header {
   letter-spacing: 2px;
   margin: 0 20px;
 }
-
+.search-box {
+    position: relative;
+}
 .search-box input {
   width: 240px;
   height: 30px;
   opacity: 0.4;
   border-radius: 4px;
   border: solid 1px #d2d4df;
+  padding: 9px;
+}
+.search-box img {
+    position: absolute;
+    right: 9px;
+    top: 10px;
+    opacity: .5;
 }
 
 .lander {
@@ -122,14 +130,17 @@ img {
 .car-comparison-quick-jump {
 }
 
+.gradient-red-text {
+    background-image: linear-gradient(268deg, #e41a1a, #262626);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .car-comparison-quick-jump .title {
-  background-image: linear-gradient(268deg, #e41a1a, #262626);
-  text-align: center;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 20px;
-  letter-spacing: 10px;
+    font-size: 20px;
+    letter-spacing: 10px;
+    text-align: center;
 }
 .ccqj-car-nav {
   width: 37px;
@@ -234,17 +245,18 @@ img {
     background-size: 100%;
     text-align: center;
     border: 1px solid transparent;
-    padding-bottom: 130px;
 }
 
 .body-style-quick-jump .title {
     color: #fff;
-    margin: 10px 0;
+    margin: 16px 0;
     letter-spacing: 10px;
+    font-size: 16px;
 }
 .body-style-quick-jump .desc{
     color: #fff;
     margin: 20px 0;
+    font-size: 14px;
 }
 
 .body-style-quick-jump .cars-panel {
@@ -271,6 +283,96 @@ img {
 /* vehicle history report section start */
 .vehicle-history-report {
     position: relative;
-    padding: 10px 20px;
-}
+    background-color: #fff;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+  }
+  .vehicle-history-report .content {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 0 7px 0px rgba(0, 0, 0, .3);
+      padding: 30px 55px;
+      max-width: 560px;
+      height: 421px;
+  }
+  .vehicle-history-report .content p {
+      font-size: 14px;
+      margin-bottom: 45px;
+      font-weight: 100;
+  }
+
+  .vehicle-history-report .title {
+      font-size: 32px;
+      margin-bottom: 10px;
+  }
+
+  .vehicle-history-report .content label span {
+      font-weight: 800;
+  }
+
+  .vehicle-history-report .content input {
+      width: 100%;
+      height: 40px;
+      padding: 7px 5px;
+      border-radius: 4px;
+      border: solid 1px #f0f0f0;
+      background-color: #f7f8f9;
+      margin: 20px 0;
+  }
+
+  .vehicle-history-report .content button {
+    color: #fff;
+    width: 129px;
+    height: 35px;
+    border-radius: 4px;
+    background-image: linear-gradient(255deg, #e41a1a, #262626);
+  }
+  
+  @media (min-width: 600px) {
+    .vehicle-history-report {
+      background-image: url(../assets/cars/vin-bg-1280.jpg);
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
+    .vehicle-history-report .content {
+      /* width: 50%; */
+    }
+  }
 /* vehicle history report section end */
+
+/* footer start */
+
+footer {
+    background-color: #fff;
+    padding: 30px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    color: #2e2c2c;
+    font-size: 11px;
+}
+
+.footer-quicklinks {
+    flex-basis: 50%;
+}
+
+.footer-quicklinks ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-quicklinks ul li,
+.copyright span {
+    opacity: .5;
+}
+
+.copyright .title {
+    margin: 30px 0 10px;
+}
+
+@media (min-width: 600px) {
+    .footer-quicklinks {
+        flex-basis: 25%;
+    }
+}
+/* footer end */
