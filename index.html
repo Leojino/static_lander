@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Static Lander</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/page.css">
 </head>
-<body>
+<body class="loading">
     <div class="wrapper">
         <header>
             <div class="logo">LOGO SPACE</div>
@@ -63,11 +65,11 @@
         </section>
         <section class="car-comparison-quick-jump">
             <h2 class="title gradient-red-text">FEATURED CAR COMPARISON</h2>
-            <div class="ccqj-car-panel-wrap">
-                <div class="ccqj-car-nav pan-left">
+            <div class="ccqj-car-panel-wrap" id="ccqj-car-panel-wrap">
+                <div class="ccqj-car-nav pan-left disabled">
                     <img src="assets/ic-back.svg" alt="">
                 </div>
-                <div class="ccqj-car-panel">
+                <div class="ccqj-car-panel" id="ccqj-car-panel">
                     <div class="ccqj-item selected">
                         <div class="ccqj-item-side side-one">
                             <img src="assets/cars/bitmap_2.jpg" alt="">
@@ -213,7 +215,9 @@
                         <br>
                         <input type="text" placeholder="Enter VIN number  (Example: 1VXBR12EXCP901213)">
                     </label>
-                    <button type="submit"> Check history </button>
+                    <button type="submit"> 
+                        <span>Check history</span>&nbsp;
+                        <img src="assets/ic-forward.svg" style="" alt=""></button>
                 </form>
             </div>
         </section>
@@ -272,6 +276,13 @@
                 </span>
             </div>
         </footer>
+
+        <div id="loader">
+            <div class="logo">LOGO SPACE</div>
+            <span>Loading</span>
+
+        </div>
     </div>
+    <script src="scripts/app.js"></script>
 </body>
 </html>
