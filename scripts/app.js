@@ -9,6 +9,9 @@ $( new class App{
 
         this.Body.removeClass("loading");
         this.event();
+
+        this.counterize();
+
     }
 
     event() {
@@ -18,6 +21,28 @@ $( new class App{
         this.VehicleReportForm.on("submit", e => {
             e.preventDefault();
         })
+    }
+
+    counterize() {
+        const eles = document.querySelectorAll(".counterize");
+        eles.forEach( el => {
+            const to = Number($(el).data("to"));
+            this.animateCounter( el, to );
+        } )
+    }
+
+    animateCounter(el, to) {
+        let counter = 0,
+            speed = 10,
+            increment = to / 300;
+        let interval =  setInterval( function() {
+            counter+=increment;
+            el.innerText = counter.toFixed(0);
+            if( counter >= to ) {
+                clearInterval(interval)
+                el.innerText = to;
+            };
+        }, speed);
     }
 
     selectCar = e => {
